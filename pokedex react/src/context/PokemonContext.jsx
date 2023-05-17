@@ -1,3 +1,10 @@
-import {createContex} from "react"; 
+//'use client';
+//import {createContex} from "react"; 
 
-export const PokemonContext = createContex()
+import { createContext } from "react";
+
+//export const PokemonContext = createContex();
+
+
+
+export const PokemonContext = createContext()
