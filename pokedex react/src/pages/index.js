@@ -1,3 +1,3 @@
-export * from '/HomePage'
-export * from '/SearchPage'
-export * from '/PokemonPage'
+export * from './HomePage'
+export * from './PokemonPage'
+export * from './SearchPage'

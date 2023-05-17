@@ -1,7 +1,7 @@
- inport React from 'react'
+import React from 'react'
 
- export const SearchPage = () =>{
-    return(
-        <div>SearchPage</div>
-    )
- }
+export const SearchPage = () => {
+  return (
+    <div>SearchPage</div>
+  )
+}
