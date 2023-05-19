@@ -1,3 +1,5 @@
+/*
+
 import { useEffect, useState } from "react";
 import { PokemonContext } from "./PokemonContext";
 import { useForm } from "../hook/useForm";
@@ -91,4 +93,17 @@ export const PokemonProvider = ({children}) => {
         </PokemonContext.Provider>
     );
 
+};
+*/
+
+import { PokemonContext } from "./PokemonContext";
+
+export const PokemonProvider = ({children}) => {
+  return (
+    <PokemonContext.Provider value ={{
+        numero: 0
+    }}>
+            {children}
+    </PokemonContext.Provider>
+  );
 };

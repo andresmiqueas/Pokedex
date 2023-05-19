@@ -4,7 +4,10 @@ import { PokemonContext } from '../context/PokemonContext';
 
 export const Navigation = () => {
 
-    const {} = useContext(PokemonContext)
+    //const {} = useContext(PokemonContext)
+
+	const context = useContext(PokemonContext)
+	console.log(context);
     
     return (
         <>
