@@ -1,12 +1,12 @@
 import React from 'react';
-import { PokemonList } from '../components';
+import { FilterBar,PokemonList } from '../components';
 
 
 
 export const HomePage = () => {
   return (
     <>
-          <div className='container-filter container'>
+          <div className='container-filter container active'>
             <div className="icon-filter">
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -28,6 +28,7 @@ export const HomePage = () => {
           </div>
         </div>
         <PokemonList/>
+        <FilterBar/>
     </>
   );
 };
