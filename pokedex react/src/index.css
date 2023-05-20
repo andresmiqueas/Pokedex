@@ -252,6 +252,19 @@ header form{
 	background-color: var(--color-dark);
 }
 
+.container-loader{
+	display: flex;
+	justify-content: center;
+	margin: 200px 0;
+}
+
+
+
+
+
+
+
+
 /* Container Filters */
 .container-filters{
     display: flex;

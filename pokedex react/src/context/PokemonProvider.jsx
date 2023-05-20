@@ -61,7 +61,7 @@ export const PokemonProvider = ({children}) => {
 
     //Llamar a un pokemon por ID
 
-    const getPokemonById = async(id)=>{
+    const getPokemonByID = async(id)=>{
         const baseURL = 'https://pokeapi.co/api/v2/';
 
         const res = await fetch(`${baseURL}pokemon/${id}`);
@@ -86,7 +86,7 @@ export const PokemonProvider = ({children}) => {
                 onResetForm,
                 allPokemons,
                 globalPokemon,
-                getPokemonById
+                getPokemonByID
             }}
         >
             {children}
