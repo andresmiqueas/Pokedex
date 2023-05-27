@@ -1,39 +1,33 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { PokemonContext } from '../context/PokemonContext'
-import { useParams } from 'react-router-dom'
-import { Loader } from '../components'
-import { primerMayuscula } from '../helper/helper'
+import React, { useContext, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { Loader } from '../components';
+import { PokemonContext } from '../context/PokemonContext';
+import { primerMayuscula } from '../helper/helper';
 
 export const PokemonPage = () => {
-  
-  const {getPokemonByID} = useContext(PokemonContext)
+	const { getPokemonByID } = useContext(PokemonContext);
 
-  const [loading, setLoading] = useState (true)
-  const [pokemon, setPokemon] = useState({})
+	const [loading, setLoading] = useState(true);
+	const [pokemon, setPokemon] = useState({});
 
-  const {id} = useParams()
+	const { id } = useParams();
 
-  const fetchPokemon = async(id)=>{
+	const fetchPokemon = async id => {
+		const data = await getPokemonByID(id);
+		setPokemon(data);
+		setLoading(false);
+	};
 
-    const data = await getPokemonByID(id)
-    setPokemon (data)
-    setLoading(false)
-  }
+	useEffect(() => {
+		fetchPokemon(id);
+	}, []);
 
-  useEffect(()=>{
-    fetchPokemon(id)
-  },[])
-  
-  
-  return (
-    
-    <main className='container main-pokemon'>
-      {
-        loading ? (
-          <Loader/>
-
-        ): (
-          <>
+	return (
+		<main className='container main-pokemon'>
+			{loading ? (
+				<Loader />
+			) : (
+				<>
 					<div className='header-main-pokemon'>
 						<span className='number-pokemon'>#{pokemon.id}</span>
 						<div className='container-img-pokemon'>
@@ -113,11 +107,7 @@ export const PokemonPage = () => {
 						</div>
 					</div>
 				</>
-        )
-      }
-
-
-    </main>
-    
-  )
-}
+			)}
+		</main>
+	);
+};
